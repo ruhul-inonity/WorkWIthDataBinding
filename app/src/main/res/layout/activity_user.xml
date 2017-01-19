@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.inonitylab.workwithdatabinding.UserActivity">
+
+    <data>
+
+        <variable
+            name="user"
+            type="com.inonitylab.workwithdatabinding.models.ObservableUser" />
+
+        <variable
+            name="clickHandler"
+            type="com.inonitylab.workwithdatabinding.models.UserClickHandler" />
+
+    </data>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="15dp"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:text="First Name"
+                android:textColor="@color/colorPrimary"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{user.firstName}"
+                android:textColor="@color/accent"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:text="Last Name"
+                android:textColor="@color/colorPrimary"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{user.lastName}"
+                android:textColor="@color/accent"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:text="Language"
+                android:textColor="@color/colorPrimary"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{user.language}"
+                android:textColor="@color/accent"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:text="Rating"
+                android:textColor="@color/colorPrimary"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{String.valueOf(user.rating)}"
+                android:textColor="@color/accent"
+                android:textSize="20sp" />
+
+
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/editTextFirstName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="20dp"
+            android:hint="First Name"
+            android:textColor="@color/colorPrimary"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/editTextLastName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:hint="Last Name"
+            android:textColor="@color/colorPrimary"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/editTextLanguage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:hint="Language"
+            android:textColor="@color/colorPrimary"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/editTextRating"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:hint="Rating"
+            android:inputType="number"
+            android:textColor="@color/colorPrimary"
+            android:textSize="20sp" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="UpdateUserData"
+            android:text="Update data" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/holo_green_dark"
+            android:onClick="@{clickHandler::onClickButton}"
+            android:tag="0"
+            android:text="Clicked 0 times" />
+    </LinearLayout>
+
+
+</layout>
